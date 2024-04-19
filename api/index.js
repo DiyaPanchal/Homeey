@@ -6,7 +6,7 @@ import authRouter from "./routes/auth.route.js";
 
 dotenv.config();
 mongoose
-  .connect("mongodb+srv://prashantchopra:prashantchopra@pc.phkdjuf.mongodb.net/")
+  .connect("mongodb://localhost:27017/diya")
   .then(() => {
     console.log("Connected to MongoDB");
   })

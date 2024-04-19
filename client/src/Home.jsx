@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 // import "./scss/slick.css";
 
 export default function Home() {
+  // const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
       {/* hero section starts */}
@@ -91,6 +92,14 @@ export default function Home() {
                     Dropdown link
                   </a>
                 </div>
+                {/* <input
+                  id="searchInput"
+                  type="text"
+                  placeholder="Search here.. "
+                  onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                  }}
+                /> */}
                 <button type="button" className="btn hero-section_searchbutton">
                   <img src="../assets/images/search.svg" alt="Search" /> Search
                 </button>
@@ -209,225 +218,251 @@ export default function Home() {
         </Slider>
       </div>
       {/* property slider section ends */}
-     {/* popular property deals section starts  */}
-    <section id="#property">
+      {/* popular property deals section starts  */}
+      <section id="#property">
         <div className="property-deals">
-            <h2 className="slider_title h2 m-0"><span className="slider_title_blue">Popular </span>Property Deals</h2>
-            <div className="property-deals_cards d-flex justify-content-between">
-                <div className="card">
-                    <img src="../assets/images/card-1.jpg" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">The Most Luxurious House</h5>
-                        <div className="property-card_location">
-                            <img src="../assets/images/map-marker-radius.svg"/>
-                            <p className="card-text">4059 Waterview Texico, NM 88135</p>
-                        </div>
-                        <div className="property-card_facility">
-                            <div className="property-card_bed">
-                                <img src="../assets/images/bed-king-outline.svg"/>
-                                <p className="card-text">3 Bedroom</p>
-                            </div>
-                            <div className="property-card_bath">
-                                <img src="../assets/images/shower.svg"/>
-                                <p className="card-text">2 Bathroom</p>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="property-card_pricedetails">
-                            <p className="property-card_price">$1,560/ <span className="property-card_per">Night</span>
-                            </p>
-                            <a href="#" className="btn cardbutton_viewmore">View More</a>
-                        </div>
-                    </div>
+          <h2 className="slider_title h2 m-0">
+            <span className="slider_title_blue">Popular </span>Property Deals
+          </h2>
+          <div className="property-deals_cards d-flex justify-content-between">
+            <div className="card">
+              <img src="../assets/images/card-1.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">The Most Luxurious House</h5>
+                <div className="property-card_location">
+                  <img src="../assets/images/map-marker-radius.svg" />
+                  <p className="card-text">4059 Waterview Texico, NM 88135</p>
                 </div>
-                <div className="card">
-                    <img src="../assets/images/card-2.jpg" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">The Most Luxurious House</h5>
-                        <div className="property-card_location">
-                            <img src="../assets/images/map-marker-radius.svg"/>
-                            <p className="card-text">4059 Waterview Texico, NM 88135</p>
-                        </div>
-                        <div className="property-card_facility">
-                            <div className="property-card_bed">
-                                <img src="../assets/images/bed-king-outline.svg"/>
-                                <p className="card-text">3 Bedroom</p>
-                            </div>
-                            <div className="property-card_bath">
-                                <img src="../assets/images/shower.svg"/>
-                                <p className="card-text">2 Bathroom</p>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="property-card_pricedetails">
-                            <p className="property-card_price">$1,560/ <span className="property-card_per">Night</span>
-                            </p>
-                            <a href="#" className="btn cardbutton_viewmore">View More</a>
-                        </div>
-                    </div>
+                <div className="property-card_facility">
+                  <div className="property-card_bed">
+                    <img src="../assets/images/bed-king-outline.svg" />
+                    <p className="card-text">3 Bedroom</p>
+                  </div>
+                  <div className="property-card_bath">
+                    <img src="../assets/images/shower.svg" />
+                    <p className="card-text">2 Bathroom</p>
+                  </div>
                 </div>
-                <div className="card">
-                    <img src="../assets/images/card-3.jpg" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">The Most Luxurious House</h5>
-                        <div className="property-card_location">
-                            <img src="../assets/images/map-marker-radius.svg"/>
-                            <p className="card-text">4059 Waterview Texico, NM 88135</p>
-                        </div>
-                        <div className="property-card_facility">
-                            <div className="property-card_bed">
-                                <img src="../assets/images/bed-king-outline.svg"/>
-                                <p className="card-text">3 Bedroom</p>
-                            </div>
-                            <div className="property-card_bath">
-                                <img src="../assets/images/shower.svg"/>
-                                <p className="card-text">2 Bathroom</p>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="property-card_pricedetails">
-                            <p className="property-card_price">$1,560/ <span className="property-card_per">Night</span>
-                            </p>
-                            <a href="#" className="btn cardbutton_viewmore">View More</a>
-                        </div>
-                    </div>
+                <hr />
+                <div className="property-card_pricedetails">
+                  <p className="property-card_price">
+                    $1,560/ <span className="property-card_per">Night</span>
+                  </p>
+                  <a href="#" className="btn cardbutton_viewmore">
+                    View More
+                  </a>
                 </div>
-                <div className="card">
-                    <img src="../assets/images/card-4.jpg" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">The Most Luxurious House</h5>
-                        <div className="property-card_location">
-                            <img src="../assets/images/map-marker-radius.svg"/>
-                            <p className="card-text">4059 Waterview Texico, NM 88135</p>
-                        </div>
-                        <div className="property-card_facility">
-                            <div className="property-card_bed">
-                                <img src="../assets/images/bed-king-outline.svg"/>
-                                <p className="card-text">3 Bedroom</p>
-                            </div>
-                            <div className="property-card_bath">
-                                <img src="../assets/images/shower.svg"/>
-                                <p className="card-text">2 Bathroom</p>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="property-card_pricedetails">
-                            <p className="property-card_price">$1,560/ <span className="property-card_per">Night</span>
-                            </p>
-                            <a href="#" className="btn cardbutton_viewmore">View More</a>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div className="property-deals_cards d-flex justify-content-between">
-                <div className="card">
-                    <img src="../assets/images/card-5.jpg" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">The Most Luxurious House</h5>
-                        <div className="property-card_location">
-                            <img src="../assets/images/map-marker-radius.svg"/>
-                            <p className="card-text">4059 Waterview Texico, NM 88135</p>
-                        </div>
-                        <div className="property-card_facility">
-                            <div className="property-card_bed">
-                                <img src="../assets/images/bed-king-outline.svg"/>
-                                <p className="card-text">3 Bedroom</p>
-                            </div>
-                            <div className="property-card_bath">
-                                <img src="../assets/images/shower.svg"/>
-                                <p className="card-text">2 Bathroom</p>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="property-card_pricedetails">
-                            <p className="property-card_price">$1,560/ <span className="property-card_per">Night</span>
-                            </p>
-                            <a href="#" className="btn cardbutton_viewmore">View More</a>
-                        </div>
-                    </div>
+            <div className="card">
+              <img src="../assets/images/card-2.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">The Most Luxurious House</h5>
+                <div className="property-card_location">
+                  <img src="../assets/images/map-marker-radius.svg" />
+                  <p className="card-text">4059 Waterview Texico, NM 88135</p>
                 </div>
-                <div className="card">
-                    <img src="../assets/images/card-6.jpg" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">The Most Luxurious House</h5>
-                        <div className="property-card_location">
-                            <img src="../assets/images/map-marker-radius.svg"/>
-                            <p className="card-text">4059 Waterview Texico, NM 88135</p>
-                        </div>
-                        <div className="property-card_facility">
-                            <div className="property-card_bed">
-                                <img src="../assets/images/bed-king-outline.svg"/>
-                                <p className="card-text">3 Bedroom</p>
-                            </div>
-                            <div className="property-card_bath">
-                                <img src="../assets/images/shower.svg"/>
-                                <p className="card-text">2 Bathroom</p>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="property-card_pricedetails">
-                            <p className="property-card_price">$1,560/ <span className="property-card_per">Night</span>
-                            </p>
-                            <a href="#" className="btn cardbutton_viewmore">View More</a>
-                        </div>
-                    </div>
+                <div className="property-card_facility">
+                  <div className="property-card_bed">
+                    <img src="../assets/images/bed-king-outline.svg" />
+                    <p className="card-text">3 Bedroom</p>
+                  </div>
+                  <div className="property-card_bath">
+                    <img src="../assets/images/shower.svg" />
+                    <p className="card-text">2 Bathroom</p>
+                  </div>
                 </div>
-                <div className="card">
-                    <img src="../assets/images/card-7.jpg" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">The Most Luxurious House</h5>
-                        <div className="property-card_location">
-                            <img src="../assets/images/map-marker-radius.svg"/>
-                            <p className="card-text">4059 Waterview Texico, NM 88135</p>
-                        </div>
-                        <div className="property-card_facility">
-                            <div className="property-card_bed">
-                                <img src="../assets/images/bed-king-outline.svg"/>
-                                <p className="card-text">3 Bedroom</p>
-                            </div>
-                            <div className="property-card_bath">
-                                <img src="../assets/images/shower.svg"/>
-                                <p className="card-text">2 Bathroom</p>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="property-card_pricedetails">
-                            <p className="property-card_price">$1,560/ <span className="property-card_per">Night</span>
-                            </p>
-                            <a href="#" className="btn cardbutton_viewmore">View More</a>
-                        </div>
-                    </div>
+                <hr />
+                <div className="property-card_pricedetails">
+                  <p className="property-card_price">
+                    $1,560/ <span className="property-card_per">Night</span>
+                  </p>
+                  <a href="#" className="btn cardbutton_viewmore">
+                    View More
+                  </a>
                 </div>
-                <div className="card">
-                    <img src="../assets/images/card-8.jpg" alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">The Most Luxurious House</h5>
-                        <div className="property-card_location">
-                            <img src="../assets/images/map-marker-radius.svg"/>
-                            <p className="card-text">4059 Waterview Texico, NM 88135</p>
-                        </div>
-                        <div className="property-card_facility">
-                            <div className="property-card_bed">
-                                <img src="../assets/images/bed-king-outline.svg"/>
-                                <p className="card-text">3 Bedroom</p>
-                            </div>
-                            <div className="property-card_bath">
-                                <img src="../assets/images/shower.svg"/>
-                                <p className="card-text">2 Bathroom</p>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="property-card_pricedetails">
-                            <p className="property-card_price">$1,560/ <span className="property-card_per">Night</span>
-                            </p>
-                            <a href="#" className="btn cardbutton_viewmore">View More</a>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+            <div className="card">
+              <img src="../assets/images/card-3.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">The Most Luxurious House</h5>
+                <div className="property-card_location">
+                  <img src="../assets/images/map-marker-radius.svg" />
+                  <p className="card-text">4059 Waterview Texico, NM 88135</p>
+                </div>
+                <div className="property-card_facility">
+                  <div className="property-card_bed">
+                    <img src="../assets/images/bed-king-outline.svg" />
+                    <p className="card-text">3 Bedroom</p>
+                  </div>
+                  <div className="property-card_bath">
+                    <img src="../assets/images/shower.svg" />
+                    <p className="card-text">2 Bathroom</p>
+                  </div>
+                </div>
+                <hr />
+                <div className="property-card_pricedetails">
+                  <p className="property-card_price">
+                    $1,560/ <span className="property-card_per">Night</span>
+                  </p>
+                  <a href="#" className="btn cardbutton_viewmore">
+                    View More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <img src="../assets/images/card-4.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">The Most Luxurious House</h5>
+                <div className="property-card_location">
+                  <img src="../assets/images/map-marker-radius.svg" />
+                  <p className="card-text">4059 Waterview Texico, NM 88135</p>
+                </div>
+                <div className="property-card_facility">
+                  <div className="property-card_bed">
+                    <img src="../assets/images/bed-king-outline.svg" />
+                    <p className="card-text">3 Bedroom</p>
+                  </div>
+                  <div className="property-card_bath">
+                    <img src="../assets/images/shower.svg" />
+                    <p className="card-text">2 Bathroom</p>
+                  </div>
+                </div>
+                <hr />
+                <div className="property-card_pricedetails">
+                  <p className="property-card_price">
+                    $1,560/ <span className="property-card_per">Night</span>
+                  </p>
+                  <a href="#" className="btn cardbutton_viewmore">
+                    View More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="property-deals_cards d-flex justify-content-between">
+            <div className="card">
+              <img src="../assets/images/card-5.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">The Most Luxurious House</h5>
+                <div className="property-card_location">
+                  <img src="../assets/images/map-marker-radius.svg" />
+                  <p className="card-text">4059 Waterview Texico, NM 88135</p>
+                </div>
+                <div className="property-card_facility">
+                  <div className="property-card_bed">
+                    <img src="../assets/images/bed-king-outline.svg" />
+                    <p className="card-text">3 Bedroom</p>
+                  </div>
+                  <div className="property-card_bath">
+                    <img src="../assets/images/shower.svg" />
+                    <p className="card-text">2 Bathroom</p>
+                  </div>
+                </div>
+                <hr />
+                <div className="property-card_pricedetails">
+                  <p className="property-card_price">
+                    $1,560/ <span className="property-card_per">Night</span>
+                  </p>
+                  <a href="#" className="btn cardbutton_viewmore">
+                    View More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <img src="../assets/images/card-6.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">The Most Luxurious House</h5>
+                <div className="property-card_location">
+                  <img src="../assets/images/map-marker-radius.svg" />
+                  <p className="card-text">4059 Waterview Texico, NM 88135</p>
+                </div>
+                <div className="property-card_facility">
+                  <div className="property-card_bed">
+                    <img src="../assets/images/bed-king-outline.svg" />
+                    <p className="card-text">3 Bedroom</p>
+                  </div>
+                  <div className="property-card_bath">
+                    <img src="../assets/images/shower.svg" />
+                    <p className="card-text">2 Bathroom</p>
+                  </div>
+                </div>
+                <hr />
+                <div className="property-card_pricedetails">
+                  <p className="property-card_price">
+                    $1,560/ <span className="property-card_per">Night</span>
+                  </p>
+                  <a href="#" className="btn cardbutton_viewmore">
+                    View More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <img src="../assets/images/card-7.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">The Most Luxurious House</h5>
+                <div className="property-card_location">
+                  <img src="../assets/images/map-marker-radius.svg" />
+                  <p className="card-text">4059 Waterview Texico, NM 88135</p>
+                </div>
+                <div className="property-card_facility">
+                  <div className="property-card_bed">
+                    <img src="../assets/images/bed-king-outline.svg" />
+                    <p className="card-text">3 Bedroom</p>
+                  </div>
+                  <div className="property-card_bath">
+                    <img src="../assets/images/shower.svg" />
+                    <p className="card-text">2 Bathroom</p>
+                  </div>
+                </div>
+                <hr />
+                <div className="property-card_pricedetails">
+                  <p className="property-card_price">
+                    $1,560/ <span className="property-card_per">Night</span>
+                  </p>
+                  <a href="#" className="btn cardbutton_viewmore">
+                    View More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <img src="../assets/images/card-8.jpg" alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">The Most Luxurious House</h5>
+                <div className="property-card_location">
+                  <img src="../assets/images/map-marker-radius.svg" />
+                  <p className="card-text">4059 Waterview Texico, NM 88135</p>
+                </div>
+                <div className="property-card_facility">
+                  <div className="property-card_bed">
+                    <img src="../assets/images/bed-king-outline.svg" />
+                    <p className="card-text">3 Bedroom</p>
+                  </div>
+                  <div className="property-card_bath">
+                    <img src="../assets/images/shower.svg" />
+                    <p className="card-text">2 Bathroom</p>
+                  </div>
+                </div>
+                <hr />
+                <div className="property-card_pricedetails">
+                  <p className="property-card_price">
+                    $1,560/ <span className="property-card_per">Night</span>
+                  </p>
+                  <a href="#" className="btn cardbutton_viewmore">
+                    View More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-     {/* popular property deals section ends */}
+      </section>
+      {/* popular property deals section ends */}
       {/* about us section starts */}
       <section id="aboutus">
         <div className="about-us">
@@ -630,117 +665,111 @@ export default function Home() {
         </div>
       </div>
       {/* best deals section ends*/}
-       {/* counter section starts  */}
-    <div class="counter">
-        <div class="counter-division">
-            <img src="../assets/images/crown.svg"/>
-            <div class="counter_info">
-                <h1 class="counter_number">10.5k</h1>
-                <p class="counter_para">Premium Property</p>
-            </div>
-            <div class="counter_img crown">
-                <img src="../assets/images/crown-vector.svg"/>
-            </div>
+      {/* counter section starts  */}
+      <div className="counter">
+        <div className="counter-division">
+          <img src="../assets/images/crown.svg" />
+          <div className="counter_info">
+            <h1 className="counter_number">10.5k</h1>
+            <p className="counter_para">Premium Property</p>
+          </div>
+          <div className="counter_img crown">
+            <img src="../assets/images/crown-vector.svg" />
+          </div>
         </div>
-        <div class="counter-division">
-            <img src="../assets/images/happy.svg"/>
-            <div class="counter_info">
-                <h1 class="counter_number">8600+</h1>
-                <p class="counter_para">Happy Customer</p>
-            </div>
-            <div class="counter_img smile">
-                <img src="../assets/images/happy-vector.svg"/>
-            </div>
+        <div className="counter-division">
+          <img src="../assets/images/happy.svg" />
+          <div className="counter_info">
+            <h1 className="counter_number">8600+</h1>
+            <p className="counter_para">Happy Customer</p>
+          </div>
+          <div className="counter_img smile">
+            <img src="../assets/images/happy-vector.svg" />
+          </div>
         </div>
-        <div class="counter-division">
-            <img src="../assets/images/trophy.svg"/>
-            <div class="counter_info">
-                <h1 class="counter_number">1200</h1>
-                <p class="counter_para">Award Winning</p>
-            </div>
-            <div class="counter_img trophy">
-                <img src="../assets/images/trophy-vector.svg"/>
-            </div>
+        <div className="counter-division">
+          <img src="../assets/images/trophy.svg" />
+          <div className="counter_info">
+            <h1 className="counter_number">1200</h1>
+            <p className="counter_para">Award Winning</p>
+          </div>
+          <div className="counter_img trophy">
+            <img src="../assets/images/trophy-vector.svg" />
+          </div>
         </div>
-        <div class="counter-division">
-            <img src="../assets/images/home.svg"/>
-            <div class="counter_info">
-                <h1 class="counter_number">750</h1>
-                <p class="counter_para">Years Experience</p>
-            </div>
-            <div class="counter_img home">
-                <img src="../assets/images/home-vector.svg"/>
-            </div>
+        <div className="counter-division">
+          <img src="../assets/images/home.svg" />
+          <div className="counter_info">
+            <h1 className="counter_number">750</h1>
+            <p className="counter_para">Years Experience</p>
+          </div>
+          <div className="counter_img home">
+            <img src="../assets/images/home-vector.svg" />
+          </div>
         </div>
-    </div>
-    {/* counter section ends */}
-    {/* featured properties section starts  */}
-    <div class="featured-properties">
-        <h2 class="slider_title h2 m-0"><span class="slider_title_blue">Featured </span>Properties</h2>
-        <div class="featured-properties_cards d-flex justify-content-between">
-            <div class="card">
-                <img src="../assets/images/modern.jpg" alt="Card image cap"/>
-                <div class="card-body">
-                    <div class="card-title_group  justify-content-between d-flex">
-                        <h5 class="card-title">A Modern House Accentuates
-                        </h5>
-                        <img src="../assets/images/for-sale.svg"/>
-                    </div>
-                    <div class="property-card_location">
-                        <img src="../assets/images/map-marker-radius.svg"/>
-                        <p class="card-text">4059 Waterview Texico, NM 88135</p>
-                    </div>
-                    <div class="features-card_pricedetails">
-                        <img src="../assets/images/Star.svg"/>
-                        <p class="features-card_price text-dark">$850
-                        </p>
+      </div>
+      {/* counter section ends */}
+      {/* featured properties section starts  */}
+      <div className="featured-properties">
+        <h2 className="slider_title h2 m-0">
+          <span className="slider_title_blue">Featured </span>Properties
+        </h2>
+        <div className="featured-properties_cards d-flex justify-content-between">
+          <div className="card">
+            <img src="../assets/images/modern.jpg" alt="Card image cap" />
+            <div className="card-body">
+              <div className="card-title_group  justify-content-between d-flex">
+                <h5 className="card-title">A Modern House Accentuates</h5>
+                <img src="../assets/images/for-sale.svg" />
+              </div>
+              <div className="property-card_location">
+                <img src="../assets/images/map-marker-radius.svg" />
+                <p className="card-text">4059 Waterview Texico, NM 88135</p>
+              </div>
+              <div className="features-card_pricedetails">
+                <img src="../assets/images/Star.svg" />
+                <p className="features-card_price text-dark">$850</p>
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <img src="../assets/images/capital.jpg" alt="Card image cap" />
+            <div className="card-body">
+              <div className="card-title_group  justify-content-between d-flex">
+                <h5 className="card-title">Capital Hill Residence in New Your</h5>
+                <img src="../assets/images/for-sale.svg" />
+              </div>
+              <div className="property-card_location">
+                <img src="../assets/images/map-marker-radius.svg" />
+                <p className="card-text">1758 Lake Floyd Circle, DE 19707</p>
+              </div>
+              <div className="property-card_pricedetails">
+                <img src="../assets/images/Star.svg" />
+                <p className="property-card_price text-dark">$1,050</p>
+              </div>
+            </div>
+          </div>
 
-                    </div>
-                </div>
+          <div className="card">
+            <img src="../assets/images/modern-house.jpg" alt="Card image cap" />
+            <div className="card-body">
+              <div className="card-title_group  justify-content-between d-flex">
+                <h5 className="card-title">A Modern House Accentuates</h5>
+                <img src="../assets/images/for-sale.svg" />
+              </div>
+              <div className="property-card_location">
+                <img src="../assets/images/map-marker-radius.svg" />
+                <p className="card-text">3994 Jewell Road, MN 55402</p>
+              </div>
+              <div className="property-card_pricedetails">
+                <img src="../assets/images/Star.svg" />
+                <p className="property-card_price text-dark">$1,200</p>
+              </div>
             </div>
-            <div class="card">
-                <img src="../assets/images/capital.jpg" alt="Card image cap"/>
-                <div class="card-body">
-                    <div class="card-title_group  justify-content-between d-flex">
-                        <h5 class="card-title">Capital Hill Residence in New Your
-                        </h5>
-                        <img src="../assets/images/for-sale.svg"/>
-                    </div>
-                    <div class="property-card_location">
-                        <img src="../assets/images/map-marker-radius.svg"/>
-                        <p class="card-text">1758 Lake Floyd Circle, DE 19707</p>
-                    </div>
-                    <div class="property-card_pricedetails">
-                        <img src="../assets/images/Star.svg"/>
-                        <p class="property-card_price text-dark">$1,050
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="../assets/images/modern-house.jpg" alt="Card image cap"/>
-                <div class="card-body">
-                    <div class="card-title_group  justify-content-between d-flex">
-                        <h5 class="card-title">A Modern House Accentuates
-                        </h5>
-                        <img src="../assets/images/for-sale.svg"/>
-                    </div>
-                    <div class="property-card_location">
-                        <img src="../assets/images/map-marker-radius.svg"/>
-                        <p class="card-text">3994 Jewell Road, MN 55402</p>
-                    </div>
-                    <div class="property-card_pricedetails">
-                        <img src="../assets/images/Star.svg"/>
-                        <p class="property-card_price text-dark">$1,200
-                        </p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
-    {/* featured properties section ends  */}
+      </div>
+      {/* featured properties section ends  */}
     </>
   );
 }
