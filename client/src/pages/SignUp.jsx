@@ -1,12 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
 import "../scss/style.scss"; 
+import { useState } from "react";
+
+
 
 export default function SignUp() {
+  const [formData, setFormData] = useState({});
+  
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.id]: event.target.value,
+    });
+  }
+  console.log(formData);
+
   // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-  };
+    const res = await fetch('/api/auth/signup',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+    const data = await res.json();
+    console.log(data);
+  }
 
   return (
     <div className="signup-page">
@@ -39,6 +63,7 @@ export default function SignUp() {
                   className="form-control"
                   id="username"
                   placeholder="Enter your username..."
+                  onChange={handleChange}
                 />
               </div>
               <div className="form-group">
@@ -48,6 +73,7 @@ export default function SignUp() {
                   className="form-control"
                   id="email"
                   placeholder="Enter your email..."
+                  onChange={handleChange}
                 />
               </div>
               <div className="form-group">
@@ -57,6 +83,7 @@ export default function SignUp() {
                   className="form-control"
                   id="password"
                   placeholder="Password"
+                  onChange={handleChange}
                 />
               </div>
               <button type="submit" className="btn btn-primary btn-block">
