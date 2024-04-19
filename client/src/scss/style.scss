@@ -371,6 +371,7 @@ input:-ms-input-placeholder {
   font-size: 20px;
   font-weight: 400;
   line-height: 27.24px;
+
 }
 .signin {
   margin-left: 146px;
@@ -378,7 +379,7 @@ input:-ms-input-placeholder {
 
 /* index section css */
 .hero-section {
-  background-image: url("../assets/images/hero-img.jpg");
+  background-image: url("../../assets/images/hero-img.jpg");
   background-position: center center;
   background-size: cover;
   border-radius: 25px;
@@ -497,10 +498,71 @@ input:-ms-input-placeholder {
   letter-spacing: 0em;
   margin: 13px auto 0 auto;
 }
+
+/* property deals css */
 .property-deals {
-  margin-top: 80px;
   background: #f4f6f8;
-  padding: 80px 300px;
+  padding: 80px 250px;
+  margin-top: 160px;
+}
+.property-deals_cards{
+  margin-top: 60px;
+}
+.card{
+  text-align: center;
+  margin-right:24px;
+  box-shadow: 0px 2px 3px 0px #242D3C33;
+}
+.card-text{
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17.7px;
+  color: #737D8C;
+}
+.property-deals .card-body{
+  padding:11px 24px 24px 24px;
+}
+.card-title{
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 23.15px;
+  color: #2A323C;
+}
+.property-card_location{
+  display: flex;
+}
+.property-card_location img,.property-card_bed img , .property-card_bath img{
+  margin-right:7px;
+}
+.property-card_location p{
+ margin-bottom: 0;
+}
+.property-card_facility{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+}
+.property-card_bed, .property-card_bath, .property-card_pricedetails{
+  display: flex;
+}
+.property-card_pricedetails{
+  margin-top: 20px;
+  justify-content: space-between;
+}
+.property-card_price{
+  color:#1252AE;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 25.87px;
+  margin:4px 0 0 0;
+}
+.property-card_per{
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17.7px;
+}
+.cardbutton_viewmore{
+  background-color: #EBEEF2;
 }
 
 /* about us css */
@@ -577,17 +639,97 @@ input:-ms-input-placeholder {
   letter-spacing: 0em;
   margin-top: 10px;
 }
+
+/* counter css */
+.counter{
+  background-color: #F4F6F8 ;
+  display: flex;
+  justify-content: space-between;
+  padding:80px 300px;
+  margin-top: 150px;
+}
+.counter-division{
+  padding:15px 79px 24px 79px;
+  background-color:#ffffff;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+}
+.counter_img{
+  position: absolute;
+  z-index: -1;
+  right:0px;
+}
+ .crown{
+  top:82px;
+}
+ .trophy{
+  top:68px;
+}
+ .home{
+  top:106px;
+}
+ .smile{
+  top:90px;
+}
+.counter_number{
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 51.75px;
+  color: #2A323C;
+}
+.counter_para{  
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24.51px;
+  margin: 15px 0 0 0;
+  color: #737D8C;
+}
+
+/* featured properties css */
+.featured-properties{
+  padding: 80px 250px;
+}
+.featured-properties_cards{
+  margin-top: 102px;
+}
+.featured-properties_cards .card{
+  padding: 24px;
+}
+.featured-properties_cards .card-body{
+  padding:0px;
+}
+.featured-properties_cards .card-title{
+  text-align: left;
+}
+.featured-properties_cards .card-text{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+}
+.features-card_pricedetails{
+   margin-top: 18px;
+  justify-content: space-between;
+  display: flex;
+}
+.features-card_price{
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27.24px;
+}
 /* footer css */
 .footer-wrap {
-  background-image: url("../../assets/images/footer-bg.jpg");
+  background-image: url("../../assets/images/footer-bg.svg");
   margin-top: 80px;
-  padding: 80px 0px 20px 0px;
+  padding: 80px 300px 20px 350px;
+  background-color: #F4F6F8;
 }
 .footer_follow {
   font-size: 18px;
   font-weight: 600;
   line-height: 24.51px;
   color: #2a323c;
+  margin-top: 20px;
 }
 .footer_text {
   font-size: 14px;
@@ -595,6 +737,7 @@ input:-ms-input-placeholder {
   line-height: 19.07px;
   color: #737d8c;
   max-width: 312px;
+  margin-top: 20px;
 }
 .footer-list .list-item2 {
   font-size: 20px;
@@ -610,16 +753,39 @@ input:-ms-input-placeholder {
   line-height: 18px;
   color: #737d8c;
 }
-
-/* signuppage css */
-.signup-page{
-  // max-height: 1080px;
+.footer-list_heading{
+  color:#000000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
 }
+.footer-list_body{
+  margin-left:13px;
+  align-items: center;
+}
+.footer_logobuttons{
+  margin-top:10px;
+}
+.footer_copywrite{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.07px;
+  color: #737D8C;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+}
+.horizontal-line{
+  color: #737D8C;
+  margin: 45px 0 0 0;
+}
+/* signuppage css */
 .signup-page_right {
-  background-image: url("../assets/images/signup-bg.jpg");
+  background-image: url("../../assets/images/signup-bg.jpg");
   background-size: cover;
   background-position: center center;
-  padding: 148px 0 210px 0;
+  padding:148px 0 210px 0;
 }
 
 .signup-page_heading {
@@ -627,14 +793,15 @@ input:-ms-input-placeholder {
   font-weight: 600;
   line-height: 65.37px;
   color: #ffffff;
-  margin: 37px auto 0 auto;
+  margin:37px auto 0 auto;
   max-width: 547px;
+
 }
 .signup-page_left {
-  padding: 150px 0 200px 0;
+   padding: 150px 0 200px 0;
 }
-.signup-page_left_header {
-  text-align: center;
+.signup-page_left_header{
+   text-align: center;
 }
 .signup-page_left_heading {
   font-size: 30px;
@@ -642,6 +809,7 @@ input:-ms-input-placeholder {
   line-height: 40.85px;
   color: #2a323c;
   margin-top: 10px;
+  
 }
 .signup-page_left_para {
   font-size: 15px;
@@ -649,24 +817,26 @@ input:-ms-input-placeholder {
   line-height: 20.43px;
   color: #737d8c;
   margin-top: 10px;
+ 
 }
-.form-group label {
+.form-group label{
   font-size: 15px;
   font-weight: 600;
   line-height: 20.43px;
-  color: #737d8c;
+  color:#737D8C;
   margin-top: 40px;
   text-align: left;
 }
-.form-group input {
-  height: 48px;
+.form-group input{
+  height:48px;
 }
-.signup-page_form button {
+.signup-page_form button{
   width: 100%;
-  background-color: #1252ae;
+  background-color:#1252AE;
   margin-top: 60px;
 }
-.social-login button {
+
+.social-login button{
   border-radius: 50px;
   border: 1px solid #cdd6e1;
   font-family: Open Sans;
@@ -678,21 +848,18 @@ input:-ms-input-placeholder {
   margin-top: 30px;
   width: 100%;
 }
-.social-login img {
-  margin-right: 12px;
+.social-login img{
+  margin-right:12px;
 }
-.signup-page_form,
-.social-login,
-.signup-page_left_header,
-.signup-page_left_signin {
-  max-width: 474px;
-  margin-left: auto;
-  margin-right: auto;
+.signup-page_form, .social-login,.signup-page_left_header,.signup-page_left_signin{
+   max-width: 474px;
+   margin-left: auto;
+   margin-right: auto;
 }
-.signup-page_left_signin {
+.signup-page_left_signin{
   font-size: 15px;
   font-weight: 600;
   line-height: 20.43px;
-  color: #737d8c;
+  color:#737D8C;
   margin-top: 20px;
 }
