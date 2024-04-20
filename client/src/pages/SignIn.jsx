@@ -1,18 +1,48 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../scss/style.scss";
+import { useState } from "react";
 
 export default function SignIn() {
-  // State for form inputs
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({});
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  // Handle form submit
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email, password);
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.id]: event.target.value,
+    });
   };
 
+  // Function to handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      setLoading(true);
+      const res = await fetch("/api/auth/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      console.log(data);
+      if (data.success === false) {
+        setLoading(false);
+        setError(data.message);
+        return;
+      }
+      setLoading(false);
+      setError(null);
+      navigate("/");
+    } catch (error) {
+      setLoading(false);
+      setError(error.message);
+    }
+  };
   return (
     <div className="signin-page">
       <div className="row">
@@ -44,8 +74,7 @@ export default function SignIn() {
                   className="form-control"
                   id="email"
                   placeholder="Enter your email..."
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleChange}
                 />
               </div>
               <div className="form-group">
@@ -55,12 +84,15 @@ export default function SignIn() {
                   className="form-control"
                   id="password"
                   placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={handleChange}
                 />
               </div>
-              <button type="submit" className="btn btn-primary btn-block">
-                SIGN IN
+              <button
+                disabled={loading}
+                type="submit"
+                className="btn btn-primary btn-block"
+              >
+                {loading ? "Loading.." : "SIGN IN"}
               </button>
             </form>
             <div className="social-login">
@@ -68,11 +100,11 @@ export default function SignIn() {
                 <img src="../assets/images/google.svg" alt="Google login" />
                 Login with Google
               </button>
-
             </div>
             <p className="signup-page_left_signin">
               Create a new account <Link to="/sign-up">Sign up</Link>
             </p>
+            {error && <p className="text-danger mt-5">{error}</p>}
           </div>
         </div>
       </div>
