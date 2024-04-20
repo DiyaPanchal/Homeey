@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom"; 
 import "../scss/style.scss"; 
 import { useState } from "react";
 
@@ -7,30 +7,48 @@ import { useState } from "react";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
-  
+  const [error, setError] = useState(null);
+  const [loading,setLoading] = useState(false);
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
     setFormData({
       ...formData,
       [event.target.id]: event.target.value,
     });
   }
-  console.log(formData);
-
+  
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = await fetch('/api/auth/signup',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+    try{
+
+      setLoading(true);
+      const res = await fetch('/api/auth/signup',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+      if(data.success === false){
+        setLoading(false);
+        setError(data.message);
+        return;
       }
-    );
-    const data = await res.json();
-    console.log(data);
-  }
+      setLoading(false);
+      setError(null);
+      navigate('/sign-in');
+    }
+    catch(error){
+      setLoading(false);
+      setError(error.message);
+    }
+  };
 
   return (
     <div className="signup-page">
@@ -86,8 +104,12 @@ export default function SignUp() {
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit" className="btn btn-primary btn-block">
-                SIGN UP
+              <button
+                disabled={loading}
+                type="submit"
+                className="btn btn-primary btn-block"
+              >
+                {loading ? "Loading.." : "SIGN UP"}
               </button>
             </form>
             <div className="social-login">
@@ -99,6 +121,7 @@ export default function SignUp() {
             <p className="signup-page_left_signin">
               Have an account? <Link to="/sign-in">Sign in</Link>
             </p>
+            {error && <p className="text-danger mt-5">{error}</p>}
           </div>
         </div>
       </div>
