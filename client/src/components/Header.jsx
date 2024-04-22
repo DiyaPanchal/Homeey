@@ -41,10 +41,15 @@ export default function Header() {
                   </li>
                   <Link to="/profile">
                     {currentUser ? (
-                      <img
-                        className="rounded-full h-7 w-7 object-cover"
+                      <img                        
                         src={currentUser.avatar}
                         alt="profile"
+                        className="rounded-circle mb-2"
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          cursor: "pointer",
+                        }}
                       />
                     ) : (
                       <li className="header_navbar_item signin text-slate-700 hover:underline">
