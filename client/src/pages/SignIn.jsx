@@ -2,12 +2,19 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../scss/style.scss";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from "../../redux/user/userSlice";
+import OAuth from "../components/OAuth";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     setFormData({
@@ -20,7 +27,7 @@ export default function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      setLoading(true);
+      dispatch(signInStart());
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: {
@@ -31,16 +38,13 @@ export default function SignIn() {
       const data = await res.json();
       console.log(data);
       if (data.success === false) {
-        setLoading(false);
-        setError(data.message);
+        dispatch(signInFailure(data.message));
         return;
       }
-      setLoading(false);
-      setError(null);
+      dispatch(signInSuccess(data));
       navigate("/");
     } catch (error) {
-      setLoading(false);
-      setError(error.message);
+      dispatch(signInFailure(error.message));
     }
   };
   return (
@@ -96,10 +100,7 @@ export default function SignIn() {
               </button>
             </form>
             <div className="social-login">
-              <button className="btn">
-                <img src="../assets/images/google.svg" alt="Google login" />
-                Login with Google
-              </button>
+                            <OAuth />
             </div>
             <p className="signup-page_left_signin">
               Create a new account <Link to="/sign-up">Sign up</Link>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom"; 
 import "../scss/style.scss"; 
 import { useState } from "react";
-
+import OAuth from "../components/OAuth";
 
 
 export default function SignUp() {
@@ -102,6 +102,7 @@ export default function SignUp() {
                   id="password"
                   placeholder="Password"
                   onChange={handleChange}
+                  autoComplete="current-password"
                 />
               </div>
               <button
@@ -113,10 +114,7 @@ export default function SignUp() {
               </button>
             </form>
             <div className="social-login">
-              <button className="btn">
-                <img src="../assets/images/google.svg" alt="Google login" />
-                Login with Google
-              </button>
+              <OAuth />
             </div>
             <p className="signup-page_left_signin">
               Have an account? <Link to="/sign-in">Sign in</Link>

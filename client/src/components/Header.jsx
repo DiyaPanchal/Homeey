@@ -1,9 +1,12 @@
 import "../scss/style.scss";
 import React from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // import Img from "../assets/images/Homeey-logo.svg";
 
 export default function Header() {
+   const { currentUser } = useSelector((state) => state.user);
   return (
     <div className="header-wrap">
       <header>
@@ -36,9 +39,20 @@ export default function Header() {
                   <li className="header_navbar_item">
                     <a href="#footer">Contact</a>
                   </li>
-                  <li className="header_navbar_item signin">
-                    <a href="/sign-in">Sign in</a>
-                  </li>
+                  <Link to="/profile">
+                    {currentUser ? (
+                      <img
+                        className="rounded-full h-7 w-7 object-cover"
+                        src={currentUser.avatar}
+                        alt="profile"
+                      />
+                    ) : (
+                      <li className="header_navbar_item signin text-slate-700 hover:underline">
+                        {" "}
+                        Sign in
+                      </li>
+                    )}
+                  </Link>
                 </ul>
                 <div>
                   <a href="/sign-up">
