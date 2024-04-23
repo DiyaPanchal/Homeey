@@ -27,6 +27,8 @@ export default function Profile() {
   const [fileUploadError, setFileUploadError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [showListingsError, setShowListingsError] = useState(false);
+  const [userListings, setUserListings] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -118,7 +120,39 @@ export default function Profile() {
       dispatch(deleteUserFailure(data.message));
     }
   };
+ const handleShowListings = async () => {
+   try {
+     setShowListingsError(false);
+     const res = await fetch(`/api/user/listings/${currentUser._id}`);
+     const data = await res.json();
+     if (data.success === false) {
+       setShowListingsError(true);
+       return;
+     }
 
+     setUserListings(data);
+   } catch (error) {
+     setShowListingsError(true);
+   }
+ };
+ const handleListingDelete = async (listingId) => {
+   try {
+     const res = await fetch(`/api/listing/delete/${listingId}`, {
+       method: "DELETE",
+     });
+     const data = await res.json();
+     if (data.success === false) {
+       console.log(data.message);
+       return;
+     }
+
+     setUserListings((prev) =>
+       prev.filter((listing) => listing._id !== listingId)
+     );
+   } catch (error) {
+     console.log(error.message);
+   }
+ };
   return (
     <div className="container">
       <div className="row justify-content-center">
@@ -212,6 +246,52 @@ export default function Profile() {
           <p className="text-success mt-4">
             {updateSuccess ? "User is updated successfully!" : ""}
           </p>
+          <button
+            onClick={handleShowListings}
+            class="text-success btn btn-lg d-block mx-auto mt-3 "
+          >
+            Show Listings
+          </button>
+          <p class="text-danger mt-5">
+            {showListingsError ? "Error showing listings" : ""}
+          </p>
+
+          {userListings && userListings.length > 0 && (
+            <div class="d-flex flex-column gap-4">
+              <h1 class="text-center mt-7 text-2xl font-weight-bold">
+                Your Listings
+              </h1>
+              {userListings.map((listing) => (
+                <div
+                  key={listing._id}
+                  class="border rounded-lg p-3 d-flex align-items-center gap-4"
+                >
+                  <Link to={`/listing/${listing._id}`}>
+                    <img
+                      src={listing.imageUrls[0]}
+                      alt="listing cover"
+                      class="h-16 w-16 object-fit"
+                    />
+                  </Link>
+                  <Link
+                    class="text-secondary font-weight-bold text-truncate flex-grow-1"
+                    to={`/listing/${listing._id}`}
+                  >
+                    <p>{listing.name}</p>
+                  </Link>
+                  <div class="d-flex flex-column align-items-center">
+                    <button
+                      onClick={() => handleListingDelete(listing._id)}
+                      class="btn btn-outline-danger "
+                    >
+                      Delete
+                    </button>
+                    <button class="btn btn-outline-success">Edit</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
