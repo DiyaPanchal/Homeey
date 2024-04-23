@@ -1,14 +1,33 @@
 import Slider from "react-slick";
-import React, { useEffect } from "react";
+import React from "react";
 
 import "./scss/style.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {FaSearch} from "react-icons/fa";
 
 // import "./scss/slick.css";
 
 export default function Home() {
-  // const [searchTerm, setSearchTerm] = useState("");
+   const [searchTerm, setSearchTerm] = useState("");
+   const navigate = useNavigate();
+   const handleSubmit = (e) => {
+     e.preventDefault();
+     const urlParams = new URLSearchParams(window.location.search);
+     urlParams.set("searchTerm", searchTerm);
+     const searchQuery = urlParams.toString();
+     navigate(`/search?${searchQuery}`);
+   };
+
+   useEffect(() => {
+     const urlParams = new URLSearchParams(location.search);
+     const searchTermFromUrl = urlParams.get("searchTerm");
+     if (searchTermFromUrl) {
+       setSearchTerm(searchTermFromUrl);
+     }
+   }, [location.search]);
   return (
     <>
       {/* hero section starts */}
@@ -25,89 +44,33 @@ export default function Home() {
               fugit, sed quia consequuntur magni dolores qui ratione sequi
               nesciunt.
             </p>
-            <div className="hero-section_buttongroup">
-              <button className="hero-section_button btn">Buy</button>
-              <button className="hero-section_button btn">Sell</button>
-              <button className="hero-section_button btn">Rent</button>
-            </div>
-            <div className="hero-section_dropdown">
-              <div
-                className="btn-group"
-                role="group"
-                aria-label="Button group with nested dropdown"
+
+            <div className="hero-section_dropdown d-flex align-items-center">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-slate-100 p-3 rounded-lg d-flex align-items-center flex-grow-1"
               >
-                <button
-                  id="btnGroupDrop1"
-                  type="button"
-                  className="btn dropdown-toggle dropdown"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <img src="../assets/images/location.svg" alt="Location" />{" "}
-                  Location
-                </button>
-                <div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a className="dropdown-item" href="#">
-                    Ahmedabad
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Vadodara
-                  </a>
-                </div>
-                <button
-                  id="btnGroupDrop2"
-                  type="button"
-                  className="btn dropdown-toggle dropdown"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <img src="../assets/images/property.svg" alt="Property" />{" "}
-                  Property
-                </button>
-                <div className="dropdown-menu" aria-labelledby="btnGroupDrop2">
-                  <a className="dropdown-item" href="#">
-                    Dropdown link
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Dropdown link
-                  </a>
-                </div>
-                <button
-                  id="btnGroupDrop3"
-                  type="button"
-                  className="btn dropdown-toggle dropdown"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <img src="../assets/images/price.svg" alt="Price" /> Price
-                </button>
-                <div className="dropdown-menu" aria-labelledby="btnGroupDrop3">
-                  <a className="dropdown-item" href="#">
-                    Dropdown link
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Dropdown link
-                  </a>
-                </div>
-                {/* <input
-                  id="searchInput"
+                <input
                   type="text"
-                  placeholder="Search here.. "
-                  onChange={(event) => {
-                    setSearchTerm(event.target.value);
-                  }}
-                /> */}
-                <button type="button" className="btn hero-section_searchbutton">
-                  <img src="../assets/images/search.svg" alt="Search" /> Search
+                  placeholder="Search..."
+                  className="bg-transparent border-0 flex-grow-1"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+
+                <button className="border-0 bg-transparent  ml-2 ">
+                  <FaSearch />
                 </button>
-              </div>
+              </form>
+
+              {/* <button type="button" className="btn hero-section_searchbutton">
+                <img src="../assets/images/search.svg" alt="Search" /> Search
+              </button> */}
             </div>
           </div>
         </div>
       </div>
+
       {/* hero section ends */}
       {/* property slider section starts */}
       <div className="container">
@@ -736,7 +699,9 @@ export default function Home() {
             <img src="../assets/images/capital.jpg" alt="Card image cap" />
             <div className="card-body">
               <div className="card-title_group  justify-content-between d-flex">
-                <h5 className="card-title">Capital Hill Residence in New Your</h5>
+                <h5 className="card-title">
+                  Capital Hill Residence in New Your
+                </h5>
                 <img src="../assets/images/for-sale.svg" />
               </div>
               <div className="property-card_location">
