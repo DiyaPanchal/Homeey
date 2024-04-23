@@ -222,7 +222,7 @@ export default function Profile() {
             />
             <button
               disabled={loading}
-              className="btn btn-primary btn-lg d-block mx-auto mt-3"
+              className="btn btn-primary w-100 btn-lg d-block mx-auto mt-3"
               type="submit"
             >
               {loading ? "Loading..." : "Update"}

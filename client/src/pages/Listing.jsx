@@ -91,7 +91,7 @@ export default function Listing() {
         </p>
       )}
       {listing && (
-        <div className="max-width-4xl mx-auto p-3 my-7 gap-4">
+        <div className="max-width-4xl mx-auto p-3 my-7 gap-4 ">
           <p className="text-2xl font-weight-bold">
             {listing.name} - $
             {listing.offer
@@ -104,12 +104,12 @@ export default function Listing() {
             {listing.address}
           </p>
           <div className="d-flex gap-4">
-            <p className="bg-danger w-100 max-width-200px text-white text-center p-1 rounded">
+            <p className="bg-danger w-50 max-width-200px text-white text-center p-1 rounded">
               {listing.type === "rent" ? "For Rent" : "For Sale"}
             </p>
             {listing.offer && (
               <p className="bg-success w-100 max-width-200px text-white text-center p-1 rounded">
-                ${+listing.regularPrice - +listing.discountPrice}
+                ${+listing.regularPrice - +listing.discountPrice} OFF
               </p>
             )}
           </div>
@@ -139,11 +139,11 @@ export default function Listing() {
               {listing.furnished ? "Furnished" : "Unfurnished"}
             </li>
           </ul>
-          
+
           {currentUser && listing.userRef !== currentUser._id && !contact && (
             <button
               onClick={() => setContact(true)}
-              className="btn "
+              className="btn btn-primary w-50 text-white mt-3"
             >
               Contact landlord
             </button>

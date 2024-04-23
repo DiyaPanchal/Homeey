@@ -154,7 +154,7 @@ export default function CreateListing() {
       }
     };
   return (
-    <main className="container py-3">
+    <main className="container p-5">
       <h1 className="text-center mb-5">Create a Listing</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -390,7 +390,7 @@ export default function CreateListing() {
 
         <button
           disabled={loading || uploading}
-          className="btn btn-primary btn-lg "
+          className="btn btn-primary btn-lg w-100 "
         >
           {loading ? "Creating..." : "CREATE LISTING"}
         </button>

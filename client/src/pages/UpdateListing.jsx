@@ -169,7 +169,7 @@ export default function CreateListing() {
     }
   };
   return (
-    <main className="container py-3">
+    <main className="container p-5">
       <h1 className="text-center mb-5">Update a Listing</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -405,9 +405,9 @@ export default function CreateListing() {
 
         <button
           disabled={loading || uploading}
-          className="btn btn-primary btn-lg mt-5  "
+          className="btn btn-primary btn-lg mt-5 w-100  "
         >
-          {loading ? "Creating..." : "UPDATE LISTING"}
+          {loading ? "Updating..." : "UPDATE LISTING"}
         </button>
         {error && <p className="text-red-700 text-sm">{error}</p>}
       </form>
