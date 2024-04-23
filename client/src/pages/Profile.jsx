@@ -17,6 +17,7 @@ import {
   signOutUserStart,
 } from "../../redux/user/userSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   const fileRef = useRef(null);
@@ -187,11 +188,17 @@ export default function Profile() {
             />
             <button
               disabled={loading}
-              className="btn btn-primary"
-              type="submit" 
+              className="btn btn-primary btn-lg d-block mx-auto mt-3"
+              type="submit"
             >
               {loading ? "Loading..." : "Update"}
             </button>
+            <Link
+              className="btn btn-success btn-lg d-block mx-auto mt-3"
+              to={"/create-listing"}
+            >
+              Create Listing
+            </Link>
           </form>
           <div className="d-flex justify-content-between mt-4">
             <span onClick={handleDeleteUser} className="text-danger">

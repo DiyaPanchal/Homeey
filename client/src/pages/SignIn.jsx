@@ -87,6 +87,7 @@ export default function SignIn() {
                   type="password"
                   className="form-control"
                   id="password"
+                  autoComplete="current-password"
                   placeholder="Password"
                   onChange={handleChange}
                 />
@@ -100,7 +101,7 @@ export default function SignIn() {
               </button>
             </form>
             <div className="social-login">
-                            <OAuth />
+              <OAuth />
             </div>
             <p className="signup-page_left_signin">
               Create a new account <Link to="/sign-up">Sign up</Link>
