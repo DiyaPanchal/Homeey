@@ -299,8 +299,11 @@ export default function CreateListing() {
           <div className="row">
             <div className="col">
               <label htmlFor="regularPrice" className="form-label">
-                Regular price ($ / Month)
+                Regular price
               </label>
+              {formData.type === "rent" && (
+                <span className="text-xs">($ / month)</span>
+              )}
               <input
                 type="number"
                 className="form-control"
@@ -316,8 +319,11 @@ export default function CreateListing() {
             {formData.offer && (
               <div class="col">
                 <label htmlFor="regularPrice" className="form-label">
-                  Discounted price ($ / Month)
+                  Discounted price 
                 </label>
+                {formData.type === "rent" && (
+                  <span className="text-xs">($ / month)</span>
+                )}
                 <input
                   type="number"
                   id="discountPrice"
@@ -381,12 +387,12 @@ export default function CreateListing() {
               </button>
             </div>
           ))}
-        
-           <button
-            disabled={loading || uploading}
-            className='btn btn-primary btn-lg '
-          >
-            {loading ? 'Creating...' : 'CREATE LISTING'}
+
+        <button
+          disabled={loading || uploading}
+          className="btn btn-primary btn-lg "
+        >
+          {loading ? "Creating..." : "CREATE LISTING"}
         </button>
         {error && <p className="text-red-700 text-sm">{error}</p>}
       </form>
