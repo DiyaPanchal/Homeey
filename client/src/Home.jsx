@@ -40,9 +40,8 @@ export default function Home() {
               <span className="hero-section_title_blue">Real Estate</span>
             </h1>
             <p className="hero-section_info">
-              Nemo enim ipsam voluptatem quia voluptas sit aspernat odit aut
-              fugit, sed quia consequuntur magni dolores qui ratione sequi
-              nesciunt.
+              Simplifying property search. Explore curated real estate options
+              tailored to you. Find your dream home effortlessly.
             </p>
 
             <div className="hero-section_dropdown d-flex align-items-center">
@@ -454,14 +453,15 @@ export default function Home() {
                       Agent
                     </h3>
                     <p className="about-us_info_para">
-                      Et harum quidem rerum facilis est et expedita distinctio.
-                      Nam libero tempore, cum soluta nobis est eligendi optio
-                      cumque nihil impedit quo minus id quod maxime placeat.
+                      At our agency, we pride ourselves on being your trusted
+                      ally in the world of real estate. With a track record of
+                      excellence and a commitment to your satisfaction, we're
+                      here to guide you every step of the way.
                     </p>
                     <p className="about-us_info_para">
-                      Sed ut perspiciatis unde omnis iste natus voluptatem
-                      accusantium doloremque laudantium, totam rem aperiam,
-                      eaque ipsa quae.
+                      Whether you're buying, selling, or investing, our
+                      experienced team is dedicated to delivering exceptional
+                      service tailored to your needs.
                     </p>
                     <div className="about-us_accordion">
                       <div className="accordion" id="accordionExample">
@@ -476,7 +476,7 @@ export default function Home() {
                               aria-controls="collapseOne"
                             >
                               <img src="../assets/images/accordion-icon.svg" />
-                              Sed ut perspiciatis unde omnis ?
+                              Expert Guidance Every Step of the Way
                             </button>
                           </h2>
                           <div
@@ -486,10 +486,12 @@ export default function Home() {
                             data-bs-parent="#accordionExample"
                           >
                             <div className="accordion-body">
-                              Nemo enim ipsam voluptatem quia voluptas sit
-                              aspernatur aut odit aut fugit sed quia
-                              consequuntur magni dolores ratione voluptatem
-                              sequi nesciunt.
+                              Our team of seasoned professionals is here to
+                              provide you with expert advice and support
+                              throughout your real estate journey. From initial
+                              consultation to closing, we'll ensure you have the
+                              information and assistance you need to make
+                              informed decisions.
                             </div>
                           </div>
                         </div>
@@ -504,7 +506,7 @@ export default function Home() {
                               aria-controls="collapseTwo"
                             >
                               <img src="../assets/images/accordion-icon.svg" />
-                              Quis autem vel eum iure reprehenderit ?
+                              Tailored Solutions for Your Needs
                             </button>
                           </h2>
                           <div
@@ -514,10 +516,12 @@ export default function Home() {
                             data-bs-parent="#accordionExample"
                           >
                             <div className="accordion-body">
-                              Nemo enim ipsam voluptatem quia voluptas sit
-                              aspernatur aut odit aut fugit sed quia
-                              consequuntur magni dolores ratione voluptatem
-                              sequi nesciunt.
+                              We understand that every client is unique, which
+                              is why we offer personalized solutions to meet
+                              your specific requirements. Whether you're
+                              searching for your dream home or maximizing your
+                              investment potential, we'll tailor our approach to
+                              align with your goals.
                             </div>
                           </div>
                         </div>
@@ -532,7 +536,7 @@ export default function Home() {
                               aria-controls="collapseThree"
                             >
                               <img src="../assets/images/accordion-icon.svg" />
-                              Sed ut perspiciatis unde omnis..?
+                              Transparent and Honest Communication
                             </button>
                           </h2>
                           <div
@@ -542,10 +546,12 @@ export default function Home() {
                             data-bs-parent="#accordionExample"
                           >
                             <div className="accordion-body">
-                              Nemo enim ipsam voluptatem quia voluptas sit
-                              aspernatur aut odit aut fugit sed quia
-                              consequuntur magni dolores ratione voluptatem
-                              sequi nesciunt.
+                              Communication is key to a successful real estate
+                              experience. That's why we prioritize transparency
+                              and honesty in all our interactions. You can trust
+                              us to keep you informed every step of the way,
+                              providing clear and open communication throughout
+                              the process.
                             </div>
                           </div>
                         </div>
@@ -572,42 +578,42 @@ export default function Home() {
                     Deals
                   </h3>
                   <p className="about-us_info_para">
-                    Et harum quidem rerum facilis est et expedita distinctio.
-                    Nam libero tempore, cum soluta nobis est eligendi optio
-                    cumque nihil impedit quo minus id quod maxime placeat.
+                    Discover a world of extraordinary real estate deals with us.
+                    Our team is dedicated to bringing you the best properties on
+                    the market, tailored to your unique needs and preferences.
                   </p>
                   <p className="about-us_info_para">
-                    Sed ut perspiciatis unde omnis iste natus voluptatem
-                    accusantium doloremque laudantium, totam rem aperiam, eaque
-                    ipsa quae.
+                    We Offer Unmatched Real Estate Opportunities.
                   </p>
                   <div className="best-deals_points">
                     <img src="../assets/images/best-deals-arrow.svg" />
                     <p className="best-deals_points-info">
-                      A building with only one room and typically a steep pointy
-                      roof.
+                      Explore distinctive properties, from historic landmarks to
+                      modern masterpieces.
                     </p>
                     <br />
                     <img src="../assets/images/best-deals-arrow.svg" />
                     <p className="best-deals_points-info">
-                      A vehicle on wheels that has a permanent residence
-                      attached to it.
+                      Find innovative living solutions with our selection of
+                      high-quality mobile homes.
                     </p>
                     <br />
                     <img src="../assets/images/best-deals-arrow.svg" />
                     <p className="best-deals_points-info">
-                      Performing financial analysis and valuation of properties.
+                      Benefit from our financial analysis and valuation services
+                      to make informed investment decisions.
                     </p>
                     <br />
                     <img src="../assets/images/best-deals-arrow.svg" />
                     <p className="best-deals_points-info">
-                      Someone who examines buildings and works with appraisers.
+                      Our team of experts is here to guide you through every
+                      step of the buying or selling process.
                     </p>
                     <br />
                     <img src="../assets/images/best-deals-arrow.svg" />
                     <p className="best-deals_points-info">
-                      A dwelling typically made of raw materials such as bamboo,
-                      mud, and clay.
+                      Embrace sustainable living with our range of eco-friendly
+                      homes made from natural materials.
                     </p>
                   </div>
                 </div>
