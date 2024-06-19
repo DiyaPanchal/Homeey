@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon api/index.js",
-    "start": "node api/index.js"
+    "start": "node api/index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.0",
-    "postcss": "^8.4.38"
+    "postcss": "^8.4.38",
+    "react-scripts": "^5.0.1"
   }
 }

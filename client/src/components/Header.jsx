@@ -31,12 +31,6 @@ export default function Header() {
                     <a href="#aboutus">About</a>
                   </li>
                   <li className="header_navbar_item">
-                    <a href="#">Review</a>
-                  </li>
-                  <li className="header_navbar_item">
-                    <a href="#">Blog</a>
-                  </li>
-                  <li className="header_navbar_item">
                     <a href="#footer">Contact</a>
                   </li>
                   <Link to="/profile">

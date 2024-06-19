@@ -6,28 +6,28 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {FaSearch} from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 // import "./scss/slick.css";
 
 export default function Home() {
-   const [searchTerm, setSearchTerm] = useState("");
-   const navigate = useNavigate();
-   const handleSubmit = (e) => {
-     e.preventDefault();
-     const urlParams = new URLSearchParams(window.location.search);
-     urlParams.set("searchTerm", searchTerm);
-     const searchQuery = urlParams.toString();
-     navigate(`/search?${searchQuery}`);
-   };
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("searchTerm", searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/search?${searchQuery}`);
+  };
 
-   useEffect(() => {
-     const urlParams = new URLSearchParams(location.search);
-     const searchTermFromUrl = urlParams.get("searchTerm");
-     if (searchTermFromUrl) {
-       setSearchTerm(searchTermFromUrl);
-     }
-   }, [location.search]);
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get("searchTerm");
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, [location.search]);
   return (
     <>
       {/* hero section starts */}
@@ -88,7 +88,7 @@ export default function Home() {
           className="brandslider"
         >
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img
                 src="../assets/images/privatehouse.svg"
                 alt="Private House"
@@ -99,7 +99,7 @@ export default function Home() {
           </div>
 
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img src="../assets/images/apartment.svg" alt="Apartment" />
               Apartment
             </a>
@@ -107,7 +107,7 @@ export default function Home() {
           </div>
 
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img
                 src="../assets/images/exclusivehotel.svg"
                 alt="Exclusive Hotel"
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
 
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img src="../assets/images/privateroom.svg" alt="Private Room" />
               Private Room
             </a>
@@ -126,14 +126,14 @@ export default function Home() {
           </div>
 
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img src="../assets/images/warehouse.svg" alt="Warehouse" />
               Warehouse
             </a>
             <div className="slider_listings">136 Listing</div>
           </div>
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img
                 src="../assets/images/privatehouse.svg"
                 alt="Private House"
@@ -144,7 +144,7 @@ export default function Home() {
           </div>
 
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img src="../assets/images/apartment.svg" alt="Apartment" />
               Apartment
             </a>
@@ -152,7 +152,7 @@ export default function Home() {
           </div>
 
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img
                 src="../assets/images/exclusivehotel.svg"
                 alt="Exclusive Hotel"
@@ -163,7 +163,7 @@ export default function Home() {
           </div>
 
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img src="../assets/images/privateroom.svg" alt="Private Room" />
               Private Room
             </a>
@@ -171,7 +171,7 @@ export default function Home() {
           </div>
 
           <div className="slide">
-            <a href="https://www2.hm.com/en_in/index.html">
+            <a href="/">
               <img src="../assets/images/warehouse.svg" alt="Warehouse" />
               Warehouse
             </a>
